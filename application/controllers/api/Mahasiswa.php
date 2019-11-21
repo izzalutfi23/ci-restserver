@@ -37,6 +37,10 @@
 			}
 		}
 
+		public function index_post(){
+			
+		}
+
 		public function index_delete(){
 			$id = $this->delete('id');
 			if($id===null){
