@@ -15,5 +15,9 @@
 			$this->db->insert('mahasiswa', $data);
 			return $this->db->affected_rows();
 		}
+		public function edit_mhs($data, $id){
+			$this->db->update('mahasiswa', $data, ['nim' => $id]);
+			return $this->db->affected_rows();
+		}
 	}
  ?>
