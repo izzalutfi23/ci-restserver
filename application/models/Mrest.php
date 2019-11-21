@@ -11,5 +11,9 @@
 			$this->db->delete('mahasiswa');
 			return $this->db->affected_rows();
 		}
+		public function input_mhs($data){
+			$this->db->insert('mahasiswa', $data);
+			return $this->db->affected_rows();
+		}
 	}
  ?>

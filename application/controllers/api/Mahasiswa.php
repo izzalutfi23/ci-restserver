@@ -38,7 +38,25 @@
 		}
 
 		public function index_post(){
-			
+			$data = [
+				'nim'=>$this->post('nim'),
+				'nama'=>$this->post('nama'),
+				'alamat'=>$this->post('alamat'),
+				'tgl_lahir'=>$this->post('tgl_lahir')
+			];
+
+			if($this->Mrest->input_mhs($data)>0){
+				$this->response([
+                    	'status' => TRUE,
+                    	'message'=>'data mahasiswa telah ditambahkan'
+                	], REST_Controller::HTTP_CREATED);
+			}
+			else{
+				$this->response([
+	                    'status' => FALSE,
+	                    'message' => 'gagal menambahkan data!'
+                	], REST_Controller::HTTP_BAD_REQUEST);
+			}
 		}
 
 		public function index_delete(){
@@ -55,7 +73,7 @@
                     	'status' => TRUE,
                     	'id' => $id,
                     	'message'=>'deleted'
-                	], REST_Controller::HTTP_OK);
+                	], REST_Controller::HTTP_NO_CONTENT);
 				}
 				else{
 					$this->response([
