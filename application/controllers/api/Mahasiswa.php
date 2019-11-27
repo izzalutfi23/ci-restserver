@@ -95,7 +95,7 @@
 				$this->response([
                     	'status' => TRUE,
                     	'message'=>'data mahasiswa telah diubah'
-                	], REST_Controller::HTTP_NO_CONTENT);
+                	], REST_Controller::HTTP_OK);
 			}
 			else{
 				$this->response([
