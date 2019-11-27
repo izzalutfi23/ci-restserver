@@ -13,6 +13,8 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->model('Mrest');
+
+			$this->methods['index_get']['limit'] = 50;
 		}
 
 		public function index_get(){
