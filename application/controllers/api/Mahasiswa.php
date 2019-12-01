@@ -14,7 +14,7 @@
 			parent::__construct();
 			$this->load->model('Mrest');
 
-			$this->methods['index_get']['limit'] = 2;
+			$this->methods['index_get']['limit'] = 10;
 		}
 
 		public function index_get(){
@@ -106,5 +106,6 @@
                 	], REST_Controller::HTTP_BAD_REQUEST);
 			}
 		}
+
 	}
  ?>
